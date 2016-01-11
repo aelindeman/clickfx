@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>whatever</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+		<style type="text/css">
+body {
+	background-color: #333;
+	color: #FFF;
+	font: 300 1em/1.5 'Open Sans', sans-serif;
+	margin: 0 auto;
+	max-width: 800px;
+	text-align: center;
+}
+a, a:visited {
+	color: #F96;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+.demo ul {
+	list-style-type: none;
+	margin: 5em 0;
+	padding: 0;
+}
+.demo ul li {
+	display: inline-block;
+}
+.demo ul li:not(:last-child) {
+	margin-right: 200px;
+}
+.demo a.shiny {
+	color: #FFF;
+	font-size: 48px;
+	text-decoration: none;
+}
+
+/* Animation CSS */
+@keyframes dashsplash {
+	0% { stroke-dashoffset: -22; }
+	100% { stroke-dashoffset: 22; }
+}
+.dash-splash {
+	pointer-events: none;
+	position: absolute;
+	user-select: none;
+}
+.dash-splash svg line {
+	fill: none;
+	opacity: 1;
+	stroke: #FFF;
+	stroke-dasharray: 22;
+	stroke-dashoffset: 22;
+	stroke-width: 2;
+}
+.dash-splash.animating svg line {
+	animation: dashsplash 0.5s cubic-bezier(0.65, 0.14, 0.39, 0.87);	
+}
+		</style>
+	</head>
+	<body>
+		<h1>Click some stuff.</h1>
+		<section class="demo">
+			<ul>
+				<li><a href="javascript:;" class="shiny"><i class="fa fa-anchor"></i></a></li>
+				<li><a href="javascript:;" class="shiny"><i class="fa fa-bicycle"></i></a></li>
+			</ul>
+			<ul>
+				<li><a href="javascript:;" class="shiny"><i class="fa fa-leaf"></i></a></li>
+			</ul>
+			<ul>
+				<li><a href="javascript:;" class="shiny"><i class="fa fa-paper-plane"></i></a></li>
+				<li><a href="javascript:;" class="shiny"><i class="fa fa-github-alt"></i></a></li>
+			</ul>
+		</section>
+		<footer>
+			<p><a href="https://github.com/aelindeman/clickfx">Fork ClickFX on GitHub</a></p>
+		</footer>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="ClickFX.js"></script>
+		<script type="text/javascript">
+$(document).on('ready', function() {
+	new ClickFX('.shiny');
+});
+		</script>
+	</body>
+</html>
