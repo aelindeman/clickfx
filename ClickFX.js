@@ -1,7 +1,6 @@
 /* ClickFX.js | Alex Lindeman | 2015-12-22 */
-
-'use strict';
 (function() {
+	'use strict';
 
 	var options, clickfx;
 
